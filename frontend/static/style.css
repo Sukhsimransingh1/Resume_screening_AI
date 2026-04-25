@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0B0F19;
+    color: #E5E7EB;
+}
+
+.main-container {
+    display: flex;
+    height: 100vh;
+}
+
+.left {
+    width: 50%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    color: #94A3B8;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 6px;
+    background: #1F2937;
+    color: white;
+}
+
+textarea {
+    height: 120px;
+}
+
+button {
+    padding: 12px;
+    background: #14B8A6;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0D9488;
+}
+
+.right {
+    width: 50%;
+    background: #111827;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-box {
+    width: 80%;
+    text-align: center;
+}
+
+.score-circle {
+    margin-bottom: 20px;
+}
+
+.circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #14B8A6 calc(var(--score) * 1%),
+        #1F2937 0%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.circle span {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.section-scores {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.card-mini {
+    background: #1F2937;
+    padding: 15px;
+    border-radius: 8px;
+    width: 30%;
+}
+
+.card-mini h3 {
+    color: #14B8A6;
+}
+
+/* Skills */
+.skills {
+    margin-top: 20px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.good {
+    background: #064E3B;
+    color: #34D399;
+}
+
+.bad {
+    background: #7F1D1D;
+    color: #F87171;
+}
+
+/* Suggestions */
+.suggestions {
+    margin-top: 20px;
+    color: #94A3B8;
+    text-align: left;
+}
+
+/* Placeholder */
+.placeholder {
+    color: #64748B;
+    font-size: 18px;
+}

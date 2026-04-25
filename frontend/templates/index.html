@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Screening AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="main-container">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+
+        <h1>Resume Screening AI</h1>
+
+        <p class="tagline">
+            Analyze resumes against job descriptions using AI.
+            Get match scores, skill gaps, and hiring insights instantly.
+        </p>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            <label>Upload Resume</label>
+            <input type="file" name="resume" required>
+
+            {% if filename %}
+            <p class="file-name">Uploaded: {{ filename }}</p>
+            {% endif %}
+
+            <label>Job Description</label>
+            <textarea name="job_description" required>{{ jd_text }}</textarea>
+
+            <button type="submit">Analyze Resume</button>
+
+        </form>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+
+        {% if result %}
+        <div class="result-box">
+
+            <!-- Circular Score -->
+            <div class="score-circle">
+                <div class="circle" style="--score: {{ result.final_score }};">
+                    <span>{{ result.final_score }}%</span>
+                </div>
+                <p>Overall Match</p>
+            </div>
+
+            <!-- Section Scores -->
+            <div class="section-scores">
+
+                <div class="card-mini">
+                    <p>BERT Match</p>
+                    <h3>{{ result.bert_score }}%</h3>
+                </div>
+
+                <div class="card-mini">
+                    <p>Skills Match</p>
+                    <h3>{{ result.skill_score }}%</h3>
+                </div>
+
+                <div class="card-mini">
+                    <p>Experience Match</p>
+                    <h3>{{ result.experience_score }}%</h3>
+                </div>
+
+            </div>
+
+            <!-- Skills -->
+            <div class="skills">
+
+                <div>
+                    <h4>Matched Skills</h4>
+                    {% for s in result.matched_skills %}
+                    <span class="tag good">{{ s }}</span>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <h4>Missing Skills</h4>
+                    {% for s in result.missing_skills %}
+                    <span class="tag bad">{{ s }}</span>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+            <!-- Suggestions -->
+            <div class="suggestions">
+                <h4>Improvement Suggestions</h4>
+                {% for s in result.suggestions %}
+                <p>• {{ s }}</p>
+                {% endfor %}
+            </div>
+
+        </div>
+
+        {% else %}
+        <div class="placeholder">
+            <p>Upload a resume to see analysis</p>
+        </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

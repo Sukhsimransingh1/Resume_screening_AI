@@ -1,0 +1,22 @@
+[
+  {
+    "resume": "Python developer with experience in machine learning, data analysis, pandas, numpy and building ML models using scikit-learn.",
+    "job_description": "Looking for a machine learning engineer skilled in Python, data analysis, and model building using sklearn.",
+    "expected": "high"
+  },
+  {
+    "resume": "Frontend developer skilled in HTML, CSS, JavaScript, and React.",
+    "job_description": "Hiring backend engineer with Python, FastAPI, and database experience.",
+    "expected": "low"
+  },
+  {
+    "resume": "Data analyst with strong SQL, Excel, Power BI, and data visualization experience.",
+    "job_description": "Looking for data analyst with SQL, dashboards, and reporting skills.",
+    "expected": "high"
+  },
+  {
+    "resume": "Java developer with Spring Boot and microservices experience.",
+    "job_description": "Need Android developer with Kotlin and mobile app development experience.",
+    "expected": "low"
+  }
+]
